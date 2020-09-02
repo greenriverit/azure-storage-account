@@ -1,1 +1,1 @@
-# azure-storage-account
+# terraform-azure-storage-account
