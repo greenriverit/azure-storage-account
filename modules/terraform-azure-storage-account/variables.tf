@@ -9,12 +9,12 @@ variable "subscriptionId" { }
 variable "tenantId" { }
 variable "clientId" { }
 variable "clientSecret" { }
-variable "storageAccountNameTerraformBackend" { }
-variable "storageContainerNameTerraformBackend" { }
+variable "storageAccountName" { }
+variable "storageContainerName" { }
 variable "resourceGroupName" { }
 variable "resourceGroupLocation" { }
 variable "subnetId" { }
-variable "environmentName" { }
+#variable "environmentName" { }
 
 ##Define the output variables
 data "azurerm_subscription" "current" {}
