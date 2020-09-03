@@ -17,9 +17,7 @@ resource "azurerm_storage_account" "terraformBknd" {
     virtual_network_subnet_ids = [var.subnetId]	
   }	
 
-  tags = {	
-    environment = "var.environmentName"	
-  }	
+  #tags = {	environment = "var.environmentName"	}	
 }	
 
 ######Each Terraform Backend will require its own storage container as follows:	
