@@ -10,7 +10,7 @@ module "azure-storage-account-demo" {
   resourceGroupName      = "${var.resourceGroupName}"
   resourceGroupLocation  = "${var.resourceGroupLocation}"
   subnetId               = "${var.subnetId}"
-  environmentName        = "${var.environmentName}"
+  #environmentName        = "${var.environmentName}"
   
 }
 
@@ -24,7 +24,7 @@ variable "storageContainerName" { }
 variable "resourceGroupName" { }
 variable "resourceGroupLocation" { }
 variable "subnetId" { }
-variable "environmentName" { }
+#variable "environmentName" { }
   
 ##Output variables
 output "subscription_name" { value = "${module.azure-storage-account-demo.subscription_name}" }
