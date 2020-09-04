@@ -1,9 +1,6 @@
 ## Copyright 2020 Green River IT (GreenRiverIT.com) as described in LICENSE.txt distributed with this project on GitHub.  
 ## Start at https://github.com/AgileCloudInstitute?tab=repositories    
 
-## Copyright 2020 Green River IT (GreenRiverIT.com) as described in LICENSE.txt distributed with this project on GitHub.  
-## Start at https://github.com/AgileCloudInstitute?tab=repositories    
-
 print("inside createStorageAccount.py")
   
 import sys  	
@@ -44,15 +41,21 @@ subscriptionId=sys.argv[7]
 tenantId=sys.argv[8]
 #The following 7 need to be made into input variables	
 resourceGroupName="pipeline-resources"	
-terraKeyFileName = "aws-simple-network-foundation-state.tf"
+terraKeyFileName = "azure-storage-account-state.tf"
 vpc_name="thisVPC"
 system_name="thisSystem"
 environment_name="thisEnvironment"
 owner_name="thisOwner"
 vm_name="thisVM"
 ##Need to populate the following two still:  
-resourceGroupLocation=''
+resourceGroupLocation='West US'
 subnetId=''
+
+#New set environment variables
+os.environ["ARM_CLIENT_ID"] = clientId
+os.environ["ARM_CLIENT_SECRET"] = clientSecret
+os.environ["ARM_SUBSCRIPTION_ID"] = subscriptionId
+os.environ["ARM_TENANT_ID"] = tenantId
 
 print("Python version is: ", sys.version_info[0])  	
 print("storageAccountName is: ", storageAccountName)  
@@ -96,7 +99,7 @@ storageAccountNameTerraformBackendLine="    storage_account_name = \""+storageAc
 storageContainerNameLine="    container_name       = \""+storageContainerName+"\"\n"	
 terraBackendKeyLine="    key                  = \""+terraKeyFileName+"\"\n"	
 
-tfFileNameAndPath=dirToUseNet+"/terraform.tf"	
+tfFileNameAndPath=dirToUseNet+"terraform.tf"	
 print("tfFileNameAndPath is: ", tfFileNameAndPath)	
 print("About to write 8 lines to a file.")	
 f = open(tfFileNameAndPath, "w")	
